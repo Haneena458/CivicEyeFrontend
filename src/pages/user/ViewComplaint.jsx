@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { viewComplaint, updateComplaint } from "../../api/api";
 import { useLocation, useNavigate } from "react-router-dom";
 import { jsPDF } from "jspdf";
-import { div } from "framer-motion/client";
 
 function ViewComplaint() {
   const [complaintDetails, setComplaintDetails] = useState(null);
@@ -44,7 +43,7 @@ function ViewComplaint() {
               setMediaType("image");
             }
             setMedia(
-              proof.startsWith("http") ? proof : `http://localhost:5000${proof}`
+              proof.startsWith("http") ? proof : `https://civiceyebackend.onrender.com${proof}`
             );
           }
         } else {

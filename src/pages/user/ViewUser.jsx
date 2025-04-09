@@ -28,7 +28,7 @@ function ViewUser() {
             } else {
               setMediaType("image");
             }
-            setMedia(`http://localhost:5000${proof}`);
+            setMedia(`https://civiceyebackend.onrender.com${proof}`);
           }
           setStatus(response.data.data.status);
         } else {
@@ -79,7 +79,7 @@ function ViewUser() {
         proofImg.crossOrigin = "Anonymous";
 
         proofImg.onload = function () {
-          doc.addImage(proofImg, "JPEG", 55, y, 100, 60); // Centered image
+          doc.addImage(proofImg, "JPEG", 55, y, 100, 60); 
           y += 80;
           addHeading();
         };
@@ -92,7 +92,7 @@ function ViewUser() {
       doc.setFontSize(15);
       doc.setFont("helvetica", "bold");
       doc.text("Complaint Details", 105, y, { align: "center" });
-      y += 20; // Add some space below the heading before adding text
+      y += 20; 
       addTextContent();
     }
 
@@ -240,7 +240,6 @@ function ViewUser() {
           </button>
         )}
 
-        {/* Back and Download buttons - always visible */}
         <button
           className="px-5 py-2 bg-gray-500 text-white rounded-lg shadow-md hover:bg-gray-600"
           onClick={() => navigate(-1)}
